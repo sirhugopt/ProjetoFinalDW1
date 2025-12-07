@@ -1,0 +1,1579 @@
+/* ===================== Reset básico ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e6f7fc;
+  color: #333;
+  overflow-x: hidden;
+}
+
+
+/* ===================== Barra superior (Aplicável em todas as páginas) ===================== */
+.barra-superior {
+  background-color: #00b4d8;
+  padding: 5px 0;
+  font-size: 13px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.barra-info {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* ===================== Cabeçalho (Aplicável em todas as páginas) ===================== */
+.cabecalho {
+  background-color: #00b4d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  flex-wrap: wrap;
+}
+
+/* Logo + Título */
+.titulo-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.header {
+  text-align: center;
+  background-color: #00b4d8;
+  padding: 20px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.header hr {
+  margin-top: 10px;
+  border: 1px solid #fff;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* ===================== Página Sobre Nós (sobre.html) ===================== */
+.sobre-nos {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-nos .intro {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.sobre-nos h2 {
+  font-size: 28px;
+  color: #00b4d8;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.sobre-nos h3 {
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.sobre-nos p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.sobre-nos h2, .sobre-nos h3 {
+  font-weight: bold;
+}
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Menu */
+.titulo-area nav {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.titulo-area nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.titulo-area nav a:hover {
+  text-decoration: underline;
+}
+
+/* Ícones */
+.rp-icon {
+  vertical-align: middle;
+  filter: grayscale(0%) brightness(100%);  /* Cor original */
+  width: 22px;
+  height: 22px;
+  transition: filter 0.2s ease;
+}
+
+/* Pesquisa e ícones */
+.direita {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.pesquisa {
+  padding: 8px 20px;
+  border-radius: 35px;
+  border: none;
+  width: 350px;
+  font-size: 14px;
+  outline: none;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+/* Alteração do Banner */
+.banner {
+  display: flex;
+  justify-content: center;  /* Centraliza a imagem */
+  margin-top: 20px; /* Espaçamento entre o banner e o cabeçalho */
+}
+/* Class for the advertisement image */
+/* Classe para a imagem do anúncio */
+.anuncio {
+  width: 150px;          /* Ajuste o tamanho da imagem */
+  animation: anuncio 15s linear infinite; /* A animação será aplicada à imagem */
+  margin-top: 40px;
+  position: relative;    /* Para controlar o movimento relativo à tela */
+}
+
+/* Definindo a animação do anúncio */
+@keyframes anuncio {
+  from {
+      transform: translateX(0) scale(1);
+  }
+  25% {
+    transform:   translateX(calc(50vw - 200px))scale(1.5);
+}
+  50% {
+      transform: translateX(calc(100vw - 100px)) scale(1);
+  }
+  75% {
+    transform:   translateX(calc(50vw - 200px))scale(1.5);
+}
+
+  to {
+      transform: translateX(0) scale(1);
+  }
+}
+
+.pep {
+  max-width: 50%;  /* Ajuste o tamanho da imagem conforme necessário */
+  height: auto;
+}
+
+/* Responsivo para mobile */
+/* Responsividade - Cabeçalho */
+@media (max-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .titulo-area {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .titulo-area nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .direita {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .pesquisa {
+    width: 100%;
+  }
+}
+/* ================= MENU DROPDOWN ================= */
+
+.menu-navegacao {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Ícones padrão - todos pretos */
+.rp-icon {
+  filter: grayscale(100%) brightness(0%);
+  transition: filter 0.2s ease;
+  width: 22px;
+  height: 22px;
+}
+
+/* Ícones voltam à cor original no hover */
+.menu-navegacao a:hover .rp-icon,
+.menu-navegacao a:focus .rp-icon,
+.menu-navegacao a:active .rp-icon,
+.dropdown-btn:hover .rp-icon {
+  filter: none;
+}
+
+/* Link padrão dos itens */
+.menu-navegacao a,
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+  transition: color 0.2s ease;
+}
+
+/* Hover/focus nos links normais e Produtos */
+.menu-navegacao a:hover,
+.menu-navegacao a:focus,
+.menu-navegacao a:active,
+.dropdown-btn:hover,
+.dropdown-btn:focus,
+.dropdown-btn:active {
+  color: red;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.seta {
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 10px 0;
+  border-radius: 4px;
+  min-width: 250px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+  color: red;
+}
+
+/* Ícone do "Produtos" específico */
+.rp-icon-produtos:hover {
+  filter: none; /* Remover o filtro e aplicar a cor original */
+  transition: filter 0.2s ease;
+}
+.card-item {
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 100%;
+}
+
+
+
+.blog-post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.blog-title { margin-bottom: 8px; }
+.blog-date { font-size: 0.9em; color: #666; margin-bottom: 12px; }
+.blog-excerpt { line-height: 1.5; }
+
+.card-item img {
+  max-width: 150px !important;
+}
+
+@media (max-width: 576px) {
+  .card-item img {
+    max-width: 120px !important;
+  }
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.price-new {
+  color: #d00;
+  font-size: 1.2em;
+  margin-top: 4px;
+}
+
+/* Alterando o ícone para vermelho no hover */
+.rp-icon-produtos:hover {
+  filter: none; /* Remove o filtro para o ícone vermelho */
+  color: red; /* Alterando a cor do ícone */
+}
+
+/* Estilo do Carrossel */
+/* Estilo do Carrossel */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  margin-top: 30px;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-text h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.carousel-text p {
+  font-size: 18px;
+}
+
+.carousel-text a {
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #0078d4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carousel-text a:hover {
+  background-color: #005c99;
+}
+
+/* Texto abaixo do banner */
+.texto-informativo {
+  display: flex;
+  justify-content: space-around; /* Garante que os itens fiquem distribuídos */
+  gap: 20px;
+  margin-top: 60px;
+  flex-wrap: wrap; /* Permite que os itens se ajustem para uma nova linha se necessário */
+  text-align: center; /* Centraliza o texto */
+  border-bottom: 1px solid #d3d3d3; /* Linha cinza abaixo da seção */
+  padding-bottom: 20px; /* Espaço abaixo do conteúdo */
+}
+
+.info-item {
+  display: flex;
+  align-items: center; /* Garante que os ícones fiquem centralizados com o texto */
+  gap: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.rp-icon {
+  font-size: 20px; /* Ajuste o tamanho dos ícones conforme necessário */
+  color: #00b4d8; /* Cor para os ícones */
+  vertical-align: middle; /* Garante que o ícone fique alinhado com o texto */
+}
+
+.produtos-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 50px;   /* <–– aí está o espaçamento inferior geral */
+}
+
+/* 2) centra verticalmente cada .produto e garante padding em baixo */
+.produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;   /* <–– espaçamento individual */
+}
+
+/* 3) mantém a tua imagem com o tamanho desejado */
+.produto img {
+  display: block;
+  margin: 0 auto 10px;
+}
+/* 4) texto por baixo */
+.produto p {
+  margin: 0;
+  font-weight: bold;
+}
+/* Estilo para o Footer */
+.footer {
+  background-color: #2d3c43;
+  color: white;
+  padding: 40px 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-social {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.nome-produto {
+  text-align: center;
+  font-weight: bold;
+}
+.produtos {
+  padding: 40px 0;
+  border-bottom: 1px solid #ccc;
+}
+.produtos-em-destaque {
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.produtos-em-destaque h2 {
+  margin-bottom: 20px;
+}
+
+.produtos-em-destaque .row > div {
+  margin-bottom: 20px;
+}
+
+.produtos-em-destaque img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.produtos-em-destaque span + span {
+  display: block;
+  color: red; /* ou outra cor à tua escolha */
+}
+
+.social-icon {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #00b4d8;
+}
+
+/* Estilos para os links do footer */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style-type: none;
+}
+
+.footer-column ul li {
+  margin: 5px 0;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #00b4d8;
+}
+
+/* Estilo para a parte inferior do footer */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-phone {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.contact-phone:hover {
+  color: #00b4d8;
+}
+
+.back-to-top {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  color: #00b4d8;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-column {
+    flex: 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.produtos-em-destaque {
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd; /* Linha cinza abaixo da seção */
+}
+
+.produtos-em-destaque h2 {
+  font-size: 24px;
+  color: #e91e63; /* Cor para o título */
+  margin-bottom: 30px;
+}
+
+.produtos-destaque-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.produto-item {
+  background-color: white;
+  padding: 20px;
+  width: 23%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #f0f0f0; /* Borda suave */
+}
+
+.produto-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.produto-item p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.produto-item .preco-antigo {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.produto-item .preco-atual {
+  font-size: 20px;
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.produto-item .desconto {
+  display: block;
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px;
+  margin: 10px 0;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.produto-item button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.produto-item button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .produto-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .produto-item {
+    width: 100%;
+  }
+}
+
+
+.imagem-produto {
+  width: 200px; /* Ajuste a largura conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilo para a seção de newsletter */
+.rp-newsletter__container {
+  background-image: url(https://lojae-s3-prd-files.radiopopular.pt/files/static/homepage/fixo/rpon_background.png);
+  background-size: cover; /* Garantir que a imagem de fundo cubra toda a área */
+  padding: 40px 0; /* Ajusta o padding para garantir que o conteúdo tenha mais espaço */
+  height: 210px;  /* Ajusta a altura do banner conforme necessário */
+  display: flex;  /* Usando Flexbox para posicionar o texto e o cartão lado a lado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center; /* Garante que o texto fique centralizado */
+}
+
+.rp-newsletter__row {
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center;
+  gap: 50px; /* Espaço entre o texto e o cartão */
+}
+
+.items-container__text {
+  text-align: left; /* Alinha o texto à esquerda dentro do bloco */
+  margin-top: 10px; /* Ajusta o espaço superior */
+}
+
+.rp-newsletter__container .title {
+  font-size: 30px;
+  margin-bottom: 10px; /* Ajuste a margem inferior para diminuir o espaço */
+}
+
+.rp-newsletter__container .desc {
+  font-size: 18px;
+  margin-bottom: 20px; /* Ajuste a margem inferior */
+}
+
+
+
+
+.items-container__image {
+  display: flex;
+  justify-content: center;
+}
+
+.items-container__image img {
+  max-width: 300px; /* Ajuste o tamanho do cartão conforme necessário */
+  height: auto;
+}
+
+/* Ajuste de responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .rp-newsletter__row {
+    flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+    text-align: center; /* Garante que o texto e o cartão fiquem centralizados em telas pequenas */
+  }
+
+  .items-container__text {
+    padding: 20px; /* Adiciona padding para deixar o texto mais espaçado */
+  }
+
+  .items-container__image {
+    margin-top: 20px; /* Espaçamento entre a imagem e o texto */
+  }
+
+}
+
+/* Estilo para a seção de contato */
+.contactos {
+  background-color: #e6f7fc;  /* Cor de fundo suave */
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+/* Cabeçalho da seção */
+.contactos h1 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o formulário de contato */
+.formulario {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;  /* Adiciona um pequeno espaço entre o formulário e o conteúdo acima */
+
+}
+
+.formulario form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colunas */
+  gap: 20px;
+}
+
+.formulario form input,
+.formulario form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.formulario form button {
+  background-color: #00b4d8;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario form button:hover {
+  background-color: #009bb3;
+}
+
+/* Estilo para a localização */
+.mapa {
+  margin-top: 20px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+.video-container video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .formulario form {
+    grid-template-columns: 1fr; /* Coluna única em telas pequenas */
+  }
+
+  .formulario form input,
+  .formulario form textarea {
+    margin-bottom: 15px;
+  }
+}
+
+.mapa {
+  width: 1000px;
+  height: auto;
+}
+
+.faq {
+  margin: 40px auto;
+  max-width: 900px;  /* Limita a largura máxima da seção FAQ */
+  text-align: center;  /* Centraliza o texto dentro da seção */
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: left;  /* Alinha o conteúdo dentro das perguntas à esquerda */
+}
+
+.faq-question {
+  font-size: 20px;
+  color: #00b4d8;
+  font-weight: bold;
+}
+
+.faq-answer {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  color: #00b4d8;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.blog {
+  margin-top: 40px;
+}
+
+.blog-post {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.blog-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00b4d8;
+  margin-top: 20px;
+}
+
+.blog-date {
+  font-size: 14px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.blog-excerpt {
+  font-size: 16px;
+  color: #333;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.read-more {
+  font-size: 16px;
+  color: #00b4d8;
+  text-decoration: none;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+header h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+header hr {
+  margin-top: 10px;
+  border: 1px solid #fff;
+  width: 50%;
+  margin: 0 auto;
+}
+.categoria {
+  padding: 40px;
+  text-align: center;
+}
+
+.categoria h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px; /* Aumentei o espaço abaixo do título para melhorar a separação */
+}
+
+.categoria p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px; /* Aumentei o espaço entre a descrição e a lista de produtos */
+}
+
+/* Estilo para o seletor de ordenação */
+.ordenar {
+  margin-bottom: 40px; /* Aumentei o espaçamento entre o campo de ordenação e a lista de produtos */
+  text-align: left; /* Alinha o seletor à esquerda para um visual mais clean */
+  width: 100%;
+}
+
+/* Estilo para o label do seletor */
+.ordenar label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo para o campo de seleção (select) */
+.ordenar select {
+  padding: 10px 14px; /* Aumentei o padding para tornar o campo de seleção mais espaçoso */
+  font-size: 16px; /* Aumentei o tamanho da fonte para melhorar a legibilidade */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  width: auto; /* Para manter o tamanho proporcional */
+  cursor: pointer; /* Melhora a experiência do usuário, indicando que é um campo interativo */
+}
+
+
+/* Estilo para a lista de produtos como tabela */
+
+
+
+/* Estilo para a lista de produtos como tabela */
+.produt-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cria uma grade responsiva */
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Estilo para cada produto */
+.produt {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.produt img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.produt-info h2 {
+  font-size: 18px;
+  color: #00b4d8;
+  margin-bottom: 10px;
+}
+
+.produt-info p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.produt-info .preco {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.produt-info .btn {
+  background-color: #00b4d8;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.produt-info .btn:hover {
+  background-color: #009bb3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .produto-container {
+      grid-template-columns: 1fr; /* Quando a tela for pequena, exibe os produtos em uma única coluna */
+  }
+}
+
+/* ===================== Página de Produto (infoproduto.html) ===================== */
+
+.pc {
+  padding: 40px;
+}
+
+.pc-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.pc-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pc-imagem {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.pc-imagem img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+}
+
+.pco-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.pco-info h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.pco-info .descricao {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.pco-info .preco {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.pco-info .avaliacoes {
+  font-size: 18px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.opcoes-envio h3,
+.garantia h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.opcoes-envio p,
+.garantia p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.opcoes-compra {
+  margin-top: 30px;
+}
+
+.opcoes-compra .btn-compra {
+  background-color: #00b4d8;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: background-color 0.3s;
+}
+
+.opcoes-compra .btn-compra:hover {
+  background-color: #009bb3;
+}
+
+@media (max-width: 768px) {
+  .pc-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .pc-imagem {
+      margin-bottom: 20px;
+  }
+
+  .pco-info {
+      align-items: center;
+      width: 100%;
+  }
+
+  .pco-info h1 {
+      text-align: center;
+  }
+
+  .opcoes-compra {
+      text-align: center;
+  }
+}
+/* ===================== Comparar Produtos (compararproduto.html) ===================== */
+
+.comparacao-produtos {
+  padding: 40px;
+  text-align: center;
+}
+
+.comparacao-produtos h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.produtos-comparados {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.produto-comparado {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  text-align: center;
+}
+
+.produto-comparado img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.tabela-comparacao {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.tabela-comparacao th, .tabela-comparacao td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.tabela-comparacao th {
+  background-color: #f0f0f0;
+}
+
+.btn-compra {
+  background-color: #00b4d8;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-compra:hover {
+  background-color: #009bb3;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .produtos-comparados {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produto-comparado {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+/* ===================== Página de 404 (erro404.html) ===================== */
+
+.erro-404 {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f0f5f9;
+  margin-bottom: 220px; /* Adicionando mais espaço entre o conteúdo da página e o footer */
+}
+
+.erro-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.erro-container h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.erro-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.opcoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.opcoes a {
+  background-color: #00b4d8;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+}
+
+.opcoes a:hover {
+  background-color: #009bb3;
+}
+
+@media (max-width: 768px) {
+  .erro-container {
+    padding: 30px;
+  }
+
+  .opcoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .opcoes a {
+    width: 100%;
+  }
+}
+
+/* Centraliza a imagem */
+.imagemdesenho {
+  display: block;
+  margin: 0 auto;
+  max-width: 40%;
+  height: auto;
+  padding-top: 40px; /* Ajusta a distância da imagem em relação ao menu/topo */
+}
+
+#board, #keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  gap: 10px;
+}
+
+#board .row {
+  display: flex;
+  gap: 5px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 50px;
+  background-color: white;
+}
+
+#keyboard {
+  margin-top: 20px;
+}
+
+#keyboard div {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+#keyboard button {
+  padding: 10px 14px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #ddd;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#keyboard button:hover {
+  background-color: #bbb;
+}
+
+/* Feedback visual das letras */
+.correta {
+  background-color: #6aaa64; /* verde */
+  color: white;
+  border-color: #6aaa64;
+}
+
+.existe {
+  background-color: #f5c000; /* amarelo mais vibrante */
+  color: white;
+  border-color: #c9b458;
+}
+
+.errada {
+  background-color: #787c7e; /* cinza escuro */
+  color: white;
+  border-color: #787c7e;
+}
+
+/* Mensagem de feedback */
+#mensagem {
+  margin-top: 10px;
+  font-weight: bold;
+  color: darkred;
+  text-align: center;
+}
+#btnModoPratica {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#btnModoPratica:hover {
+  background-color: #5a6268;
+}
+
+
+.botao-gestao {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #6c757d;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.botao-gestao:hover {
+  background-color: #5a6268;
+}
+/* Estilo do container da gestão de palavras */
+.gestao-palavras {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.gestao-palavras h2, .gestao-palavras h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input e botões alinhados */
+.gestao-palavras input[type="text"] {
+  width: calc(100% - 130px);
+  padding: 10px;
+  font-size: 16px;
+}
+
+.gestao-palavras button {
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.gestao-palavras button:hover {
+  background-color: #555;
+}
+
+/* Lista de palavras */
+.gestao-palavras ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.gestao-palavras li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.gestao-palavras li button {
+  background-color: #c0392b;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.gestao-palavras li button:hover {
+  background-color: #e74c3c;
+}
+.barra-info a {
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.barra-info a:hover {
+  text-decoration: underline;
+}
